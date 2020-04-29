@@ -24,9 +24,9 @@ const UpdateMovie = (props) => {
 		e.preventDefault();
 		axios
 			.put(`http://localhost:5000/api/movies/${movie.id}`, movie)
-			.then((res) => {
-				props.history.push('/');
+			.then(() => {
 				props.getMovieList();
+				props.history.push('/');
 			})
 			.catch((err) => console.log(err));
 	};
