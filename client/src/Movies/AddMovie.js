@@ -25,62 +25,52 @@ const AddMovie = (props) => {
 
 		axios
 			.post('http://localhost:5000/api/movies', newMovie)
-			.then((res) => {
-				console.log(res.data);
-				clearState();
-				props.history.push('/');
+			.then(() => {
 				props.getMovieList();
+				props.history.push('/');
 			})
 			.catch((err) => console.log(err));
 
 		setNewMovie(initialState);
 	};
 
-	const clearState = () => {
-		setNewMovie({ ...initialState });
-	};
-
 	return (
 		<div className="add-movie">
 			<h2>Add movie to the list:</h2>
 			<form onSubmit={addMovie}>
-				<label>
-					Name:{' '}
-					<input
-						type="text"
-						name="title"
-						value={newMovie.title}
-						onChange={handleChange}
-					/>
-				</label>
-				<label>
-					Director:{' '}
-					<input
-						type="text"
-						name="director"
-						value={newMovie.director}
-						onChange={handleChange}
-					/>
-				</label>
-				<label>
-					Metascore:
-					<input
-						type="number"
-						name="metascore"
-						value={newMovie.metascore}
-						onChange={handleChange}
-					/>
-				</label>
-				<label>
-					Stars:
-					<input
-						type="text"
-						name="stars"
-						value={newMovie.stars}
-						onChange={handleChange}
-					/>
-				</label>
-				<button>Submit Form</button>
+				<input
+					type="text"
+					name="title"
+					value={newMovie.title}
+					onChange={handleChange}
+					placeholder="Movie title"
+				/>
+
+				<input
+					type="text"
+					name="director"
+					value={newMovie.director}
+					onChange={handleChange}
+					placeholder="Director"
+				/>
+
+				<input
+					type="number"
+					name="metascore"
+					value={newMovie.metascore}
+					onChange={handleChange}
+					placeholder="Score"
+				/>
+
+				<input
+					type="text"
+					name="stars"
+					value={newMovie.stars}
+					onChange={handleChange}
+					placeholder="Stars names separeted with comma"
+				/>
+
+				<button>Add</button>
 			</form>
 		</div>
 	);

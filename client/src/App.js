@@ -57,8 +57,7 @@ const App = () => {
 			/>
 			<Route
 				path="/add-movie"
-				render={(props) => <AddMovie {...props} />}
-				getMovieList={getMovieList}
+				render={(props) => <AddMovie {...props} getMovieList={getMovieList} />}
 			/>
 		</>
 	);

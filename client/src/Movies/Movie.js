@@ -36,22 +36,23 @@ function Movie({ addToSavedList, history, getMovieList }) {
 	return (
 		<div className="save-wrapper">
 			<MovieCard movie={movie} />
+			<div className="buttons-wrapper">
+				<div className="save-button" onClick={saveMovie}>
+					Save
+				</div>
 
-			<div className="save-button" onClick={saveMovie}>
-				Save
+				<div className="delete-button" onClick={() => deleteMovie(movie.id)}>
+					Delete
+				</div>
+
+				<Link
+					key={movie.id}
+					to={`/update-movie/${movie.id}`}
+					className="edit-button link"
+				>
+					Edit
+				</Link>
 			</div>
-
-			<div className="delete-button" onClick={() => deleteMovie(movie.id)}>
-				Delete
-			</div>
-
-			<Link
-				key={movie.id}
-				to={`/update-movie/${movie.id}`}
-				className="edit-button"
-			>
-				Edit
-			</Link>
 		</div>
 	);
 }
