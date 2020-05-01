@@ -17,7 +17,12 @@ const UpdateMovie = (props) => {
 
 	const changeHandler = (e) => {
 		let value = e.target.value;
-		setMovie({ ...movie, [e.target.name]: value });
+
+		if (e.target.name === 'stars') {
+			setMovie({ ...movie, [e.target.name]: value.split(',') });
+		} else {
+			setMovie({ ...movie, [e.target.name]: value });
+		}
 	};
 
 	const handleSubmit = (e) => {

@@ -66,6 +66,14 @@ body {
 
 .saved-movie {
 	margin: 0 10px;
+	text-decoration: none;
+	padding: 5px 10px;
+	background-color: none;
+	color: #1e58ff;
+}
+
+.about-description {
+	border: 1px solid red;
 }
 
 .save-wrapper {
@@ -110,7 +118,7 @@ body {
 .save-button,
 .add-button,
 .add-movie button,
-.saved-movie {
+form button {
 	padding: 5px 10px;
 	background-color: none;
 	color: #1e58ff;
@@ -119,6 +127,10 @@ body {
 	text-align: center;
 	cursor: pointer;
 	text-decoration: none;
+}
+
+.edit-button .link {
+	color: #1e58ff;
 }
 
 .buttons-wrapper {
@@ -144,7 +156,7 @@ body {
 		0 2px 4px rgba(0, 0, 0, 0.24);
 	padding: 1rem;
 	cursor: pointer;
-	position: relative;
+	width: 75%;
 	margin: 1rem auto;
 }
 
@@ -161,10 +173,11 @@ body {
 	text-align: center;
 	padding: 30px;
 }
+
 form {
 	display: flex;
 	justify-content: space-between;
-	width: 75%;
+
 	margin: 0 auto;
 }
 input {

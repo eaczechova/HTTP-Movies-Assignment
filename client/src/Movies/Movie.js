@@ -48,7 +48,7 @@ function Movie({ addToSavedList, history, getMovieList }) {
 				<Link
 					key={movie.id}
 					to={`/update-movie/${movie.id}`}
-					className="edit-button link"
+					className="edit-button"
 				>
 					Edit
 				</Link>
